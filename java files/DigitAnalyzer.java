@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class DigitAnalyzer {
 
-    void countDigit(int num, int d){
+    int countDigit(int num, int d){
         int count=0;
         while (num>0){
         int digit = num % 10;
@@ -11,7 +11,8 @@ class DigitAnalyzer {
             }
         num = num / 10;
         }
-        System.out.println("The digit " + d + " occurs " + count + " times.");
+        return count;
+        
     }
 
     public static void main(String[] args) {
@@ -22,7 +23,8 @@ class DigitAnalyzer {
       int d = sc.nextInt();
       
       DigitAnalyzer da = new DigitAnalyzer();
-      da.countDigit(num, d);
+      int result=da.countDigit(num, d);
+      System.out.println("The digit " + d + " occurs " + result + " times.");
       sc.close(); 
     }
 
